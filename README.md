@@ -1,24 +1,24 @@
-# README
+# US Dollar Converter to EUR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+With this tools you can convert US Dollar in to EUR at exchange rates given by the European Central Bank.
 
-Things you may want to cover:
+# Setup
 
-* Ruby version
+Please run the following command to setup the tool. You need to have the ruby gem *bundler* installed.
 
-* System dependencies
+`git clone git@github.com:m20io/leadfeeder-convert.git`
 
-* Configuration
+`bundle`
 
-* Database creation
+`bin/rake db:setup`
 
-* Database initialization
+# Usage
 
-* How to run the test suite
+With the following command you can update the exchange rates:
+`bin/rake exchange_rates:update`
 
-* Services (job queues, cache servers, search engines, etc.)
+And with the following command you convert US Dollar into EUR:
 
-* Deployment instructions
+`bin/rake exchange_rates:convert[100.10]` converts $100.10 with today's exchange rate
 
-* ...
+`bin/rake exchange_rates:convert[100.10, 2010-01-01]` converts $100.10 with the exchange rate from the first of January 2010.
