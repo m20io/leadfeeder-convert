@@ -6,8 +6,6 @@ With this tools you can convert US Dollar in to EUR at exchange rates given by t
 
 Please run the following command to setup the tool. You need to have the ruby gem *bundler* installed.
 
-`git clone git@github.com:m20io/leadfeeder-convert.git`
-
 `bundle`
 
 `bin/rake db:setup`
