@@ -9,8 +9,8 @@ class ExchangeRatesImport
         next
       end
 
-      ExchangeRate.find_or_create_by(
-        date: Date.parse(rate_row[0])) do |exchange_rate|
+      ExchangeRate.find_or_create_by(date: Date.parse(rate_row[0])
+        ) do |exchange_rate|
           exchange_rate.us_dollar = BigDecimal.new(Float(rate_row[1]), 10)
       end
     end

@@ -15,7 +15,10 @@ namespace :exchange_rates do
         abort 'Unable to load new exchange_rates file. Please check your internet connection.'
       end
     end
+    count_before = ExchangeRate.count
     ExchangeRatesImport.load(file_name)
+    puts "Import finished. #{ExchangeRate.count - count_before} records added." \
+        " Currently have #{ExchangeRate.count} exchange rates in the database."
   end
 
   desc 'Converts US Dollar in EUR, with date formated as "YYYY-MM-DD". Today is the default "date".'
